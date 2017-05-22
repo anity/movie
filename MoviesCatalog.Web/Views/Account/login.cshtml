@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    @using (Html.BeginForm("Authorization", "Account",
+    FormMethod.Post, new {id = "regForm"}))
+{
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <p>Используйте</p>
+                    <p>test@mail.ru</p>
+                    <p>test</p>
+                    <p>или</p>
+                    <p>testing@mail.ru</p>
+                    <p>testing</p>
+                </div>
+                <div class="span12">
+                    <p>Email: <input type="text" class="span12" name="email" value="test@mail.ru"></p>
+                    <p>Пароль: <input type="password" class="span12" name="password" value="test"/></p>
+                    <p><button type="submit" class="btn btn-primary">Войти</button></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

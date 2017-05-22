@@ -1,0 +1,37 @@
+﻿@model MoviesCatalog.Web.ViewModels.MovieViewModel
+@{
+    ViewBag.Title = "EditMovie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    @using (Html.BeginForm("SaveMovie", "movies", FormMethod.Post,
+        new { enctype = "multipart/form-data", @class = "navbar-form pull-left" }))
+    {
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.UserId)
+        @Html.HiddenFor(m => m.UserName)
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span2">
+                    @if (!string.IsNullOrEmpty(Model.ImageName) &&
+                         File.Exists(Server.MapPath("/imgdb/" + Model.ImageName)))
+                    {
+                        <p><img title="@Model.Name" alt="@Model.Name" src="/imgdb/@Model.ImageName"/></p>
+                    }
+                    <p>
+                        <label class="btn" for="image">Загрузить</label>
+                        <input type="file" class="hidden" id="image" name="image"/>
+                    </p>
+                </div>
+                <div class="span10">
+                    <p>Название: <input type="text" class="span12" value="@Model.Name" name="name" placeholder="Название"></p>
+                    <p>Описание: <textarea class="span12" name="description" placeholder="Описание">@Model.Description</textarea></p>
+                    <p>Год выпуска: <input type="text" class="span12" name="year" value="@Model.Year" placeholder="Год выпуска"></p>
+                    <p>Режиссер: <input type="text" class="span12" name="producer" value="@Model.Producer" placeholder="Режиссер"></p>
+                    <p><button type="submit" class="btn btn-primary">Сохранить</button></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

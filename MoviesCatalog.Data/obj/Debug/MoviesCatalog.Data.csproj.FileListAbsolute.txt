@@ -1,0 +1,9 @@
+D:\Movies\MoviesCatalog\MoviesCatalog.Data\bin\Debug\MoviesCatalog.Data.dll
+D:\Movies\MoviesCatalog\MoviesCatalog.Data\bin\Debug\MoviesCatalog.Data.pdb
+D:\Movies\MoviesCatalog\MoviesCatalog.Data\bin\Debug\EntityFramework.dll
+D:\Movies\MoviesCatalog\MoviesCatalog.Data\bin\Debug\EntityFramework.xml
+D:\Movies\MoviesCatalog\MoviesCatalog.Data\obj\Debug\MoviesCatalog.Data.csprojResolveAssemblyReference.cache
+D:\Movies\MoviesCatalog\MoviesCatalog.Data\obj\Debug\MoviesCatalog.Data.dll
+D:\Movies\MoviesCatalog\MoviesCatalog.Data\obj\Debug\MoviesCatalog.Data.pdb
+D:\Movies\MoviesCatalog\MoviesCatalog.Data\bin\Debug\MoviesCatalog.Model.dll
+D:\Movies\MoviesCatalog\MoviesCatalog.Data\bin\Debug\MoviesCatalog.Model.pdb

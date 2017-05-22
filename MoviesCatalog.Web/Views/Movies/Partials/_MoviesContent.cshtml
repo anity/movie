@@ -1,0 +1,18 @@
+﻿@using MoviesCatalog.Web.Helpers
+@model MoviesCatalog.Web.ViewModels.MoviesViewModel
+
+@foreach (var item in Model.Movies)
+{
+    <div class="row">
+        <div class="span12">
+           @item.Id. @item.Name (@item.Year)
+        </div>
+        <div class="span12">
+            @Html.ActionLink("Подробнее", "movie", "movies", new {id = item.Id}, new {@class = "btn"})
+        </div>
+    </div> 
+}
+
+<div class="btn-group">
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index",new { page = x}))
+</div>

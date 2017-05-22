@@ -1,0 +1,34 @@
+﻿@model MoviesCatalog.Web.ViewModels.MovieViewModel
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            @if (!string.IsNullOrEmpty(Model.ImageName) &&
+                 File.Exists(Server.MapPath("/imgdb/" + Model.ImageName)))
+            {
+                <img title="@Model.Name" alt="@Model.Name" src="/imgdb/@Model.ImageName"/>
+            }
+        </div>
+        <div class="span10">
+            <p>Название: @Model.Name</p>
+            <p>Описание: @Model.Description</p>
+            <p>Год выпуска: @Model.Year</p>
+            <p>Режиссер: @Model.Producer</p>
+            <p>Пользователь: @Model.UserName</p>
+            @if (WebSecurity.IsAuthenticated && WebSecurity.CurrentUserId == Model.UserId)
+            {
+                <p>
+                    @Html.ActionLink("Редактировать", "editmovie", "movies", new {id = Model.Id}, new {@class = "btn"})
+                </p>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+    
